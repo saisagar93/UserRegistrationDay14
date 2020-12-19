@@ -62,3 +62,12 @@ then
 else
         echo Invalid
 fi
+
+read -p "Enter password : " password
+passwordPattern="^(.*[[:upper:]].*)([a-z])(?=.*?[0-9])(?=.*?[#@$?]).{8,}$"
+if [[ $password =~ $passwordPattern ]]
+then
+        echo Valid
+else
+        echo Invalid
+fi
